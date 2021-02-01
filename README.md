@@ -17,11 +17,11 @@ Yang dapat dilakukan Kasir :</br>
 - Cek Harga </br>
 - Pembelian Barang </br>
 
-<h3>Login</h3>
+<h5>Login</h5>
 
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/1.png)
 
-<h3>Admin</h3>
+<h5>Admin</h5>
 
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/2.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/3.png)
@@ -29,7 +29,7 @@ Yang dapat dilakukan Kasir :</br>
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/5.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/6.png)
 
-<h3>Kasir</h3>
+<h5>Kasir</h5>
 
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/7.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/8.png)
