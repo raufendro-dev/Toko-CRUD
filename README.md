@@ -1,3 +1,8 @@
+<h1>Aplikasi Toko Berbasis Java
+Deskripsi : Aplikasi Toko ini berbasis bahasa pemrograman Java dengan menggunakan JFrame dan MySQL
+
+
+
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/1.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/2.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/3.png)
