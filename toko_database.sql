@@ -29,7 +29,7 @@ CREATE TABLE `barang` (
   `stok` int NOT NULL,
   `harga_satuan` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,8 +38,35 @@ CREATE TABLE `barang` (
 
 LOCK TABLES `barang` WRITE;
 /*!40000 ALTER TABLE `barang` DISABLE KEYS */;
-INSERT INTO `barang` VALUES (1,'mknroti01','Roti Keju',15,2500),(3,'mknroti02','Roti Coklat',10,3000),(4,'mknroti03','Roti Kacang',5,3000),(5,'sabunbtg01','Lux',40,5000),(6,'sabunbtg02','Shinzui Kirei',20,3000);
+INSERT INTO `barang` VALUES (1,'mknroti01','Roti Keju',18,2500),(3,'mknroti02','Roti Coklat',8,3500),(4,'mknroti03','Roti Kacang',5,3000),(5,'sabunbtg01','Lux',40,5000),(6,'sabunbtg02','Shinzui Kirei',20,3000),(7,'sabunbtg03','Nuvo',25,3500);
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pembelian`
+--
+
+DROP TABLE IF EXISTS `pembelian`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pembelian` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tanggal` date NOT NULL,
+  `namabarang` varchar(255) NOT NULL,
+  `stokbeli` int NOT NULL,
+  `hargabeli` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pembelian`
+--
+
+LOCK TABLES `pembelian` WRITE;
+/*!40000 ALTER TABLE `pembelian` DISABLE KEYS */;
+INSERT INTO `pembelian` VALUES (3,'2021-02-01','Roti Keju',2,5000);
+/*!40000 ALTER TABLE `pembelian` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -52,10 +79,11 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `namalengkap` varchar(255) NOT NULL,
-  `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `jabatan` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +92,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Administrator','admin','admin123');
+INSERT INTO `users` VALUES (1,'Administrator','admin','admin123','admin'),(2,'Rauf Endro Widagdo','raufendro','tes123','kasir');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -77,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-01 12:04:04
+-- Dump completed on 2021-02-01 15:51:04

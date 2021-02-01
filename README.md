@@ -3,3 +3,6 @@
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/3.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/4.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/5.png)
+![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/6.png)
+![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/7.png)
+![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/8.png)

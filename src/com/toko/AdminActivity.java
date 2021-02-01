@@ -26,6 +26,7 @@ public class AdminActivity extends JFrame {
 	private JButton editstok;
 	private JButton hapusbarang;
 	private JButton btnNewButton;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -55,7 +56,7 @@ public class AdminActivity extends JFrame {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		try {
-			String query = "SELECT * FROM barang;";
+			String query = "SELECT * FROM barang ORDER BY kodebarang ASC;";
 			PreparedStatement pst = koneksi.prepareStatement(query);
 			ResultSet rs=pst.executeQuery();
 			table.setModel(DbUtils.resultSetToTableModel(rs));
@@ -105,6 +106,18 @@ public class AdminActivity extends JFrame {
 			});
 			btnNewButton.setBounds(71, 14, 117, 29);
 			contentPane.add(btnNewButton);
+			
+			btnNewButton_1 = new JButton("Data Pembelian");
+			btnNewButton_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					dispose();
+					DataPembelian data = new DataPembelian();
+					data.setVisible(true);
+					
+				}
+			});
+			btnNewButton_1.setBounds(185, 14, 148, 29);
+			contentPane.add(btnNewButton_1);
 			
 		} catch(Exception error) {
 			JOptionPane.showMessageDialog(null, error);

@@ -67,17 +67,17 @@ public class EditBarang extends JFrame {
 		stokbarang.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Harga Satuan");
-		lblNewLabel_3.setBounds(25, 204, 97, 16);
+		lblNewLabel_3.setBounds(25, 247, 97, 16);
 		contentPane.add(lblNewLabel_3);
 		
 		hargabarang = new JTextField();
 		hargabarang.setText("0");
-		hargabarang.setBounds(148, 199, 130, 26);
+		hargabarang.setBounds(148, 242, 130, 26);
 		contentPane.add(hargabarang);
 		hargabarang.setColumns(10);
 		
 		JLabel status = new JLabel("");
-		status.setBounds(25, 252, 344, 16);
+		status.setBounds(25, 351, 344, 16);
 		contentPane.add(status);
 		
 		JButton btnNewButton = new JButton("+");
@@ -93,29 +93,22 @@ public class EditBarang extends JFrame {
 					ResultSet rs=pst.executeQuery();
 					
 					while(rs.next()) {
-						int stok=rs.getInt("stok");
+						
 						int hargaawal=rs.getInt("harga_satuan");
-						String masuk = stokbarang.getText();
-						int angka = Integer.parseInt(masuk);
-						int hitung = stok+angka;
-						String hit = String.valueOf(hitung);
+						
+						
+						
 						String hargastr=hargabarang.getText();
 						int hargabaru=Integer.parseInt(hargastr);
 						int hargaupdate=hargaawal+hargabaru;
 						String hargaupdatestr=String.valueOf(hargaupdate);
-						String updatequery = "Update barang set stok=? where namabarang=?;";
-						PreparedStatement pst2 = koneksi.prepareStatement(updatequery);
-						pst2.setLong(1, hitung);
-						pst2.setString(2, nama);
-						pst2.execute();
-						//status.setText("Barang telah diubah");
-						pst2.close();
+						;
 						String updatequery2 = "Update barang set harga_satuan=? where namabarang=?;";
 						PreparedStatement pst3 = koneksi.prepareStatement(updatequery2);
 						pst3.setLong(1, hargaupdate);
 						pst3.setString(2, nama);
 						pst3.execute();
-						status.setText("Barang "+nama+" telah diubah");
+						status.setText("Harga barang telah ditambah");
 						pst3.close();
 						
 					}
@@ -145,29 +138,22 @@ public class EditBarang extends JFrame {
 					ResultSet rs=pst.executeQuery();
 					
 					while(rs.next()) {
-						int stok=rs.getInt("stok");
+						
 						int hargaawal=rs.getInt("harga_satuan");
-						String masuk = stokbarang.getText();
-						int angka = Integer.parseInt(masuk);
-						int hitung = stok-angka;
-						String hit = String.valueOf(hitung);
+						
+						
+						
 						String hargastr=hargabarang.getText();
 						int hargabaru=Integer.parseInt(hargastr);
-						int hargaupdate=hargaawal-hargabaru;
+						int hargaupdate=hargaawal+hargabaru;
 						String hargaupdatestr=String.valueOf(hargaupdate);
-						String updatequery = "Update barang set stok=? where namabarang=?;";
-						PreparedStatement pst2 = koneksi.prepareStatement(updatequery);
-						pst2.setLong(1, hitung);
-						pst2.setString(2, nama);
-						pst2.execute();
-						//status.setText("Barang telah diubah");
-						pst2.close();
+						;
 						String updatequery2 = "Update barang set harga_satuan=? where namabarang=?;";
 						PreparedStatement pst3 = koneksi.prepareStatement(updatequery2);
 						pst3.setLong(1, hargaupdate);
 						pst3.setString(2, nama);
 						pst3.execute();
-						status.setText("Barang "+nama+" telah diubah");
+						status.setText("Harga barang telah dikurangi");
 						pst3.close();
 						
 					}
@@ -191,8 +177,94 @@ public class EditBarang extends JFrame {
 				admin.setVisible(true);
 			}
 		});
-		btnNewButton_2.setBounds(25, 346, 117, 29);
+		btnNewButton_2.setBounds(25, 379, 117, 29);
 		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("+");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					String query = "SELECT * FROM barang where namabarang=?;";
+					String nama = namabarang.getText();
+					PreparedStatement pst = koneksi.prepareStatement(query);
+					
+					pst.setString(1, namabarang.getText());
+					
+					ResultSet rs=pst.executeQuery();
+					
+					while(rs.next()) {
+						int stok=rs.getInt("stok");
+						
+						String masuk = stokbarang.getText();
+						int angka = Integer.parseInt(masuk);
+						int hitung = stok+angka;
+						
+						
+						
+						String updatequery = "Update barang set stok=? where namabarang=?;";
+						PreparedStatement pst2 = koneksi.prepareStatement(updatequery);
+						pst2.setLong(1, hitung);
+						pst2.setString(2, nama);
+						pst2.execute();
+						status.setText("Stok Barang telah ditambah");
+						pst2.close();
+						
+						
+					}
+					rs.close();
+					pst.close();
+					
+					
+				} catch(Exception error) {
+					JOptionPane.showMessageDialog(null, error);
+				}
+			}
+		});
+		btnNewButton_3.setBounds(25, 192, 117, 29);
+		contentPane.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("-");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					String query = "SELECT * FROM barang where namabarang=?;";
+					String nama = namabarang.getText();
+					PreparedStatement pst = koneksi.prepareStatement(query);
+					
+					pst.setString(1, namabarang.getText());
+					
+					ResultSet rs=pst.executeQuery();
+					
+					while(rs.next()) {
+						int stok=rs.getInt("stok");
+						
+						String masuk = stokbarang.getText();
+						int angka = Integer.parseInt(masuk);
+						int hitung = stok-angka;
+						
+						
+						
+						String updatequery = "Update barang set stok=? where namabarang=?;";
+						PreparedStatement pst2 = koneksi.prepareStatement(updatequery);
+						pst2.setLong(1, hitung);
+						pst2.setString(2, nama);
+						pst2.execute();
+						status.setText("Stok Barang telah ditambah");
+						pst2.close();
+						
+						
+					}
+					rs.close();
+					pst.close();
+					
+					
+				} catch(Exception error) {
+					JOptionPane.showMessageDialog(null, error);
+				}
+			}
+		});
+		btnNewButton_4.setBounds(183, 192, 117, 29);
+		contentPane.add(btnNewButton_4);
 		
 		
 	}

@@ -71,24 +71,29 @@ public class Login extends JFrame {
 					pst.setString(1, username.getText());
 					pst.setString(2, password.getText());
 					ResultSet rs=pst.executeQuery();
-					int hit=0;
+					String jabatan;
+					
 					while(rs.next()) {
+						jabatan=rs.getString("jabatan");
+						if(jabatan.compareTo("admin")==0) {
+							dispose();
+							AdminActivity admin = new AdminActivity();
+							admin.setVisible(true);
+						} else if(jabatan.compareTo("kasir")==0) {
+							dispose();
+							KasirActivity kasir = new KasirActivity();
+							kasir.setVisible(true);
+						}
 						
-						hit=hit+1;
 						
 						
 					}
 					rs.close();
 					pst.close();
-					if(hit==1) {
-						dispose();
-						AdminActivity admin = new AdminActivity();
-						admin.setVisible(true);
+					
 						
-					} else {
-						System.out.print("Gagal Login");
-						JOptionPane.showMessageDialog(null, "Username atau Password salah!");
-					}
+						
+					 
 					
 				} catch(Exception error) {
 					JOptionPane.showMessageDialog(null, error);
