@@ -11,7 +11,8 @@ Yang dapat dilakukan Admin :</br>
 - Tambah Barang </br>
 - Edit Barang (edit jumlah stok dan edit harga barang) </br>
 - Hapus Barang </br>
-- Melihat Data Pembelian </br>
+- Melihat Data Pembelian 
+
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/2.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/3.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/4.png)
@@ -23,6 +24,7 @@ Yang dapat dilakukan Admin :</br>
 </br>
 Yang dapat dilakukan Kasir :</br>
 - Cek Harga </br>
-- Pembelian Barang </br>
+- Pembelian Barang
+
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/7.png)
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/8.png)
