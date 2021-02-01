@@ -4,7 +4,7 @@ Deskripsi : Aplikasi Toko ini berbasis bahasa pemrograman Java dengan menggunaka
 
 
 
-![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/1.png)
+![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/1.png =250x250)
 <h3>Admin</h3>
 </br>
 Yang dapat dilakukan Admin :</br>
