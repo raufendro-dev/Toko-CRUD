@@ -17,6 +17,11 @@ Yang dapat dilakukan Kasir :</br>
 - Cek Harga </br>
 - Pembelian Barang </br>
 
+<h3>Catatan :</h3>
+</br>
+-Buat Database dengan nama toko terlebih dahulu lalu import file .sql nya </br>
+-Add jar module path mysql connector nya dan jar rs2xml nya </br>
+
 <h5>Tampilan Login</h5>
 
 ![alt text](https://github.com/raufendro-dev/Toko-CRUD/blob/master/gambar/1.png)
